@@ -1,0 +1,72 @@
+<h3>login works! now this is coming from login.component.html file as we injected the login component into App component</h3>
+<h1>Hii</h1>
+
+
+<h2>Route lazy Loading </h2>
+<a routerLink="/admin">Go to Admin page</a>
+<router-outlet></router-outlet>
+
+<!-- now here are performing Inline and Internal CSS -->
+
+<H2 style="color: green;">YES it's inline & internal CSS</H2>  <!-- This is called inline css -->
+
+<!-- This is Internal Css -->
+<style>                 
+    h2{
+        background-color: yellow;
+    }
+</style>
+
+<h3>your number - {{myNumber}}</h3>
+
+<h3> Control Flow Statements if-else</h3>
+@if(x==10) 
+{
+    <div style="width: 200px; height: 200px; background-color: crimson;"> 
+
+    </div>
+}
+@else if(x>15){
+    <div style="width: 200px; height: 200px; background-color: magenta;"> </div>
+}
+@else{
+    <div style="width: 200px; height: 200px; background-color: black;"> </div>
+}
+
+<br>
+<button (click)="hide()">Hide Div</button>
+<button (click)="show()">Show Div</button>
+<button (click)="toggle()">{{display? 'Make Empty' : 'Show color'}}</button> <!-- if true -> false; if false -> true -->
+<br><br>
+@if(display) 
+{
+    <div style="width: 200px; height: 200px; background-color:coral;"> 
+
+    </div>
+}
+<br><br>
+@switch(color){
+    @case('red') {
+        <div style="width: 100px; height: 100px; background-color:red;"> </div>
+    }
+    @case('blue')
+    {
+        <div style="width: 100px; height: 100px; background-color:blue;"> </div>
+    }
+    @case('black')
+    {
+        <div style="width: 100px; height: 100px; background-color:black;"> </div>
+    }
+    @case('orange')
+    {
+        <div style="width: 100px; height: 100px; background-color:orange;"> </div>
+    }
+}
+
+<!-- Now here we are performing property binding [ ] -->
+<button [disabled] = "isDisabled" (click) = "propertyBinding()">Click me</button>
+
+
+<h3>Two Way Binding</h3>
+<input [(ngModel)]="myname"   type="text" placeholder="Enter name">
+<h3>{{myname}}</h3>
